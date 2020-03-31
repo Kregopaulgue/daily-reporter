@@ -24,7 +24,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "daily_reporter_temp"
+            "name": "daily_reporter"
           }
         },
         {
