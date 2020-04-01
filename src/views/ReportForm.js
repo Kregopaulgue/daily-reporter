@@ -96,3 +96,7 @@ class ReportForm {
         this.currentPlantToDoId = newPlanToDo.id;
     }
 }
+
+module.exports = {
+    ReportForm
+}
