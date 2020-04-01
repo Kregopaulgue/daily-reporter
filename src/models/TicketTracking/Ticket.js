@@ -6,14 +6,17 @@ class Ticket {
     /**
      * @constructor
      * @param {number} id id(number) of the ticket
-     * @param {string} name Name of the ticket 
-     * @param {string} url Url of the ticket
+     * @param {string} [name] Name of the ticket 
+     * @param {string} [url] Url of the ticket
      * @param {array} [logs] Array of logs (<code>Log</code> class object), that are tracked in a ticket
      */
     constructor(id, name, url, logs) {
         this.id = id;
-        this.name = name;
-        this.url = url;
+
+        //if inputs are passes - set
+        //otherwise - empty strings
+        this.name = name ? name : '';
+        this.url = url ? url : '';
 
         // If logs are passes - set them. Empty array otherwise
         this.logs = logs ? logs : [];
