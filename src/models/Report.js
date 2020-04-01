@@ -53,3 +53,7 @@ class Report {
         this.plansToDo.splice(indexOfPlanToDoToDelete, 1);
     }
 }
+
+module.exports = {
+    Report
+}

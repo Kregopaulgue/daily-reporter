@@ -43,3 +43,7 @@ class Ticket {
         this.logs.splice(indexOfLogToDelete, 1);
     }
 }
+
+module.exports = {
+    Ticket
+}

@@ -18,3 +18,7 @@ class Log {
         this.time = time ? time : '';
     }
 }
+
+module.exports = {
+    Log
+}

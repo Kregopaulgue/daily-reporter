@@ -14,3 +14,7 @@ class PlanToDo {
         this.planToDo = planToDo ? planToDo : '';
     }
 }
+
+module.exports = {
+    PlanToDo
+}
