@@ -1,21 +1,21 @@
 /**
  * Adds new child element to node
+ * @param {object} parentNodeObject parent node object
  * @param {string} newChildTag html tag of the new element
  * @param {string} newChildId id of the new element
- * @param {object} parentNodeObject parent node object
  */
-function addNewChildToNode(newChildTag, newChildOptions, parentNodeObject) {
+function addNewChildToNode(parentNodeObject, newChildTag, newChildOptions) {
     const newChildElement = createHtmlElement(newChildTag, newChildOptions);
     parentNodeObject.appendChild(newChildElement);
 }
 
 /**
  * Adds new child element to node by id
+ * @param {number} parentNodeObject parent node id
  * @param {string} newChildTag html tag of the new element
  * @param {string} newChildId id of the new element
- * @param {number} parentNodeObject parent node id
  */
-function addNewChildToNodeById(newChildTag, newChildOptions, parentNodeId) {
+function addNewChildToNodeById(parentNodeId, newChildTag, newChildOptions) {
     const newChildElement = createHtmlElement(newChildTag, newChildOptions);
     addChildToNodeById(newChildElement, parentNodeId);
 }
@@ -43,10 +43,10 @@ function createHtmlElement(elementTag, options) {
 
 /**
  * Adds new child to node
+ * @param {object} parentNodeObject
  * @param {object} childElement 
- * @param {object} parentNodeObject 
  */
-function addChildToNodeById(childElement, parentNodeId) {
+function addChildToNodeById(parentNodeId, childElement) {
     const parentNodeObject = document.getElementById(parentNodeId);
     parentNodeObject.appendChild(childElement);
 }
