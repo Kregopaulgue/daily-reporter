@@ -55,7 +55,7 @@ class TicketForm {
 
         //creating log HTML forms and putting them to ticket element
         // array of LogForm instances
-        const logFormsInstances = this.logs.map(log => {
+        const logFormsInstances = this.ticket.logs.map(log => {
             return new LogForm(log);
         }); 
         //array of log form HTML elements
