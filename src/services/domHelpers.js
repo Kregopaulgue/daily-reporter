@@ -35,9 +35,12 @@ function addNewChildToNodeById(parentNodeId, newChildTag, newChildOptions) {
 function createHtmlElement(elementTag, options) {
     const newElement = document.createElement(elementTag);
 
-    Object.keys(options).forEach(key => {
-        newElement[key] = options[key];
-    });
+    if(options) {
+        Object.keys(options).forEach(key => {
+            newElement[key] = options[key];
+        });
+    }
+    
     return newElement;
 }
 
