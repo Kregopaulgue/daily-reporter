@@ -56,3 +56,7 @@ class PlanToDoForm {
         }
     }
 }
+
+module.exports = {
+    PlanToDoForm
+}
