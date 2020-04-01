@@ -64,6 +64,17 @@ class ReportFile {
         });
         return planText;
     }
+
+    /**
+     * Creates report .txt file with passed text
+     * @param {string} reportText text to save
+     */
+    static writeReportToFile(reportText) {
+        fs.writeFile('report.txt', reportText, err => {
+            console.log("Something went wrong");
+            console.log(err);
+        });
+    }
 }
 
 module.exports = {
