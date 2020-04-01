@@ -23,8 +23,8 @@ class ReportForm {
      * @param {array} planToDoForms array of PlanToDoForms instances 
      */
     constructor(ticketForms, planToDoForms) {
-        this.ticketForms = ticketForms;
-        this.planToDoForms = planToDoForms;
+        this.ticketForms = ticketForms ? ticketForms : [];
+        this.planToDoForms = planToDoForms ? planToDoForms : [];
 
         this.reportForm = this._initializeReport();
 
