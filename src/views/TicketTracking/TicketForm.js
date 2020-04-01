@@ -27,8 +27,8 @@ class TicketForm {
         this.ticketForm = ticketElement;
         this.logForms = logFormsInstances;
 
-        const logsArrayCopy = this.ticket.logs;
-        this.currentLogId = logsArrayCopy.pop().id;
+        const logsArray = this.ticket.logs;
+        this.currentLogId = logsArray[logsArray.length - 1].id;
     }
 
     /**
