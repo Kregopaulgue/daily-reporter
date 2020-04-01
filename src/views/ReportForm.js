@@ -92,7 +92,7 @@ class ReportForm {
      * Adding plan to do form to the report
      */
     _addPlanToDoForm() {
-        const newPlanToDo = new Ticket(this.currentPlantToDoId + 1);
+        const newPlanToDo = new PlanToDo(this.currentPlantToDoId + 1);
         const newPlanToDoForm = new PlanToDoForm(newPlanToDo);
 
         //accessing tickets html list (4 - index)

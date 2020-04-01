@@ -67,6 +67,8 @@ class TicketForm {
         logsListElement.append(...childLogsElements);
         ticketElement.append(logsListElement);
 
+        addNewChildToNode(ticketElement, 'button', { innerText: 'Add Log', onclick: this._addLogForm.bind(this) });
+
         //logsFormInstances - for saving forms in this in constr
         return {
             ticketElement,
@@ -98,7 +100,6 @@ class TicketForm {
      * @param {string} time 
      */
     _addLogForm(description, time) {
-        //!!! fix id issue
         const newLog = new Log(this.currentLogId + 1, description, time);
         const newLogForm = new LogForm(newLog);
         
