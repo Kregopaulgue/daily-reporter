@@ -1,5 +1,6 @@
 const { createHtmlElement, addNewChildToNode } = require('./../../services/domHelpers.js');
 const { LogForm } = require('./../../views/TicketTracking/LogForm.js');
+const { Log } = require('./../../models/TicketTracking/Log.js');
 /**
  * Class for representing whole ticket in html (including logs)
  * @class
@@ -92,7 +93,9 @@ class TicketForm {
      */
     _addLogForm(description, time) {
         //!!! fix id issue
-        const newLogForm = new LogForm(1, description, time);
+        const newLog = new Log(1, description, time);
+        const newLogForm = new LogForm(newLog);
+        
         this.ticket.addLog(newLogForm.log);
         this.logForms.push(newLogForm);
 
