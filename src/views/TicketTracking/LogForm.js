@@ -67,3 +67,7 @@ class LogForm {
         }
     }
 }
+
+module.exports = {
+    LogForm
+}
