@@ -4,12 +4,14 @@ const { TicketForm } = require('./TicketTracking/TicketForm.js');
 
 const { Ticket } = require('./../models/TicketTracking/Ticket');
 const { PlanToDo } = require('./../models/PlanToDo.js');
+const { Log } = require('./../models/TicketTracking/Log.js');
 
 
 const TICKETS_LIST_ID = "ticketsListId",
     PLANS_LIST_ID = "plansListId",
     START_TICKET_ID = 1,
-    START_PLAN_TO_DO_ID = 1;
+    START_PLAN_TO_DO_ID = 1,
+    START_LOG_ID = 1;
 /**
  * Class representing whole report html
  * @class
@@ -49,6 +51,9 @@ class ReportForm {
         reportElement.append(...childElementsParams);
 
         const firstTicket = new Ticket(START_TICKET_ID);
+        const firstLog = new Log(START_LOG_ID);
+        firstTicket.addLog(firstLog);
+
         const initialisingTicketForm = new TicketForm(firstTicket);
         //accessing tickets html list
         this.ticketForms.push(initialisingTicketForm);

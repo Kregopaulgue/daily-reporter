@@ -1,6 +1,9 @@
 const { createHtmlElement, addNewChildToNode } = require('./../../services/domHelpers.js');
 const { LogForm } = require('./../../views/TicketTracking/LogForm.js');
 const { Log } = require('./../../models/TicketTracking/Log.js');
+
+const STARTING_LOG_ID = 1;
+
 /**
  * Class for representing whole ticket in html (including logs)
  * @class
@@ -23,6 +26,9 @@ class TicketForm {
         } = this._createTicketForm();
         this.ticketForm = ticketElement;
         this.logForms = logFormsInstances;
+
+        const logsArrayCopy = this.ticket.logs;
+        this.currentLogId = logsArrayCopy.pop().id;
     }
 
     /**
@@ -93,7 +99,7 @@ class TicketForm {
      */
     _addLogForm(description, time) {
         //!!! fix id issue
-        const newLog = new Log(1, description, time);
+        const newLog = new Log(this.currentLogId + 1, description, time);
         const newLogForm = new LogForm(newLog);
         
         this.ticket.addLog(newLogForm.log);
@@ -102,6 +108,8 @@ class TicketForm {
         //4 is index of logs list in ticket form
         const ticketLogsList = this.ticketForm.children[4];
         ticketLogsList.append(newLogForm.logForm);
+
+        this.currentLogId = newLog.id;
     }
 
     /**
