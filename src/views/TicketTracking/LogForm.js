@@ -21,7 +21,7 @@ class LogForm {
      * @returns {object} <li> js object with log's inputs and labels
      */
     _createLogForm() {
-        const logListElement = createHtmlElement('li'. {
+        const logListElement = createHtmlElement('li', {
             id: this.log.id.toString()
         });
 
