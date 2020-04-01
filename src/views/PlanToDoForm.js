@@ -25,7 +25,7 @@ class PlanToDoForm {
         planToDoInput.value = this.planToDo.planToDo;
         planToDoInput.id = this.planToDo.id;
 
-        planToDoInput.addEventListener('input', this._changePlanToDo)
+        planToDoInput.addEventListener('input', this._changePlanToDo.bind(this))
         
         //creating Label for the input
         const labelForPlanToDoInput = document.createElement('label');

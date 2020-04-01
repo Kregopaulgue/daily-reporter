@@ -41,11 +41,11 @@ class ReportForm {
         const childElementsParams = [
             { tag: 'label', options: { innerText: 'Tracked Time: ' }},
             { tag: 'ol', options: { id: TICKETS_LIST_ID }},
-            { tag: 'button', options: { innerText: 'Add Ticket', onclick: this._addTicketForm }},
+            { tag: 'button', options: { innerText: 'Add Ticket', onclick: this._addTicketForm.bind(this) }},
 
             { tag: 'label', options: { innerText: 'Plans For The Next Day: ' }},
             { tag: 'ol', options: { id: PLANS_LIST_ID }},
-            { tag: 'button', options: { innerText: 'Add Plan', onclick: this._addPlanToDoForm }}
+            { tag: 'button', options: { innerText: 'Add Plan', onclick: this._addPlanToDoForm.bind(this) }}
         ];
 
         childElementsParams.forEach(elementParams => {
@@ -65,7 +65,7 @@ class ReportForm {
         const initialisingPlanForm = new PlanToDoForm(firstPlanToDo);
         //accessing plans to do html list
         this.planToDoForms.push(initialisingPlanForm);
-        reportElement.children[4].append(initialisingPlanForm);
+        reportElement.children[4].append(initialisingPlanForm.planToDoForm);
 
         return reportElement;
     }

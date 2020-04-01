@@ -45,9 +45,9 @@ class TicketForm {
         //creating <label> and <input> tags for name & url
         const childLabelsAndInputsParams = [
             { tag: 'label', options: { innerText: 'Name: ' }},
-            { tag: 'input', options: { type: 'text: ', oninput: this._changeTicketName }},
+            { tag: 'input', options: { type: 'text: ', oninput: this._changeTicketName.bind(this) }},
             { tag: 'label', options: { innerText: 'URL: ' }},
-            { tag: 'input', options: { type: 'text: ', oninput: this._changeTicketUrl }}
+            { tag: 'input', options: { type: 'text: ', oninput: this._changeTicketUrl.bind(this) }}
         ];
         childLabelsAndInputsParams.forEach(elementParams => {
             addNewChildToNode(ticketElement, elementParams.tag, elementParams.options)

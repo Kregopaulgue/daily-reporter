@@ -27,9 +27,9 @@ class LogForm {
 
         const childElementsParams = [
             { tag: 'label', options: { innerText: 'Description: ' }},
-            { tag: 'input', options: { type: 'text: ', oninput: this._changeLogDescription }},
+            { tag: 'input', options: { type: 'text: ', oninput: this._changeLogDescription.bind(this) }},
             { tag: 'label', options: { innerText: 'Time: ' }},
-            { tag: 'input', options: { type: 'text: ', oninput: this._changeLogTime }}
+            { tag: 'input', options: { type: 'text: ', oninput: this._changeLogTime.bind(this) }}
         ]
 
         childElementsParams.forEach(elementParams => {
