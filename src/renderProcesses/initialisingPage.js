@@ -8,5 +8,6 @@ body.append(mainReportForm.reportForm);
 
 const showInfoButton = document.getElementById("showInfoButton");
 showInfoButton.addEventListener('click', event => {
-    ReportFile.formatInfoStringToWrite(mainReportForm);
+    const reportTextToSave = ReportFile.formatInfoStringToWrite(mainReportForm);
+    ReportFile.writeReportToFile(reportTextToSave);
 });
