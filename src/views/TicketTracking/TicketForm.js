@@ -93,7 +93,7 @@ class TicketForm {
     _addLogForm(description, time) {
         //!!! fix id issue
         const newLogForm = new LogForm(1, description, time);
-        this.logs.push(newLogForm.log);
+        this.ticket.addLog(newLogForm.log);
         this.logForms.push(newLogForm);
 
         //4 is index of logs list in ticket form
