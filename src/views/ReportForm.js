@@ -48,7 +48,9 @@ class ReportForm {
             { tag: 'button', options: { innerText: 'Add Plan', onclick: this._addPlanToDoForm }}
         ];
 
-        reportElement.append(...childElementsParams);
+        childElementsParams.forEach(elementParams => {
+            addNewChildToNode(reportElement, elementParams.tag, elementParams.options)
+        });
 
         const firstTicket = new Ticket(START_TICKET_ID);
         const firstLog = new Log(START_LOG_ID);
