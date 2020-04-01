@@ -112,3 +112,7 @@ class TicketForm {
         }
     }
 }
+
+module.exports = {
+    TicketForm
+}
