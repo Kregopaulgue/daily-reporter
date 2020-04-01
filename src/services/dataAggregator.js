@@ -1,5 +1,4 @@
 /**
- * 
  * @param {ReportForm} reportForm instance of ReportForm class 
  */
 function aggregateData(reportForm) {
@@ -10,9 +9,10 @@ function aggregateData(reportForm) {
         return planToDoForm.planToDo;
     });
 
-    console.log(allTickets);
-    console.log(allPlansToDo);
-    console.log('For test');
+    return {
+        tickets: allTickets,
+        plans: allPlansToDo
+    }
 }
 
 module.exports = {
