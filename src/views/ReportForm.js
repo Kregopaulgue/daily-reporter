@@ -75,7 +75,11 @@ class ReportForm {
      */
     _addTicketForm() {
         const newTicket = new Ticket(this.currentTicketId + 1);
+        const newLog = new Log(1);
+        newTicket.addLog(newLog);
+        
         const newTicketForm = new TicketForm(newTicket);
+        
 
         //accessing tickets html list (1 - index)
         this.ticketForms.push(newTicketForm);
