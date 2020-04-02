@@ -18,3 +18,7 @@ class ProjectApi {
         }
     }
 }
+
+module.exports = {
+    ProjectApi
+}
