@@ -87,3 +87,6 @@ typings/
 
 # Electron-Forge
 out/
+
+#file with report
+report.txt
