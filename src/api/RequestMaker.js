@@ -81,7 +81,7 @@ class RequestMaker {
     /**
      * Making requests based on this data 
      */
-    async _makeRequest() {
+    async makeRequest() {
         const fetchOptions = {
             headers: {
                 'Authorization': btoa(username + ':' + token),
@@ -101,4 +101,8 @@ class RequestMaker {
             throw response;
         }
     }
+}
+
+module.exports = {
+    RequestMaker
 }
