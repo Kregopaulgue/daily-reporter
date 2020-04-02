@@ -1,9 +1,6 @@
 const POST_METHOD = 'POST',
     GET_METHOD = 'GET',
     PUT_METHOD = 'PUT';
-
-const username = process.env.username;
-const token = process.env.token;
 /**
  * Class for requests building
  * @class
@@ -82,9 +79,12 @@ class RequestMaker {
      * Making requests based on this data 
      */
     async makeRequest() {
+        const username = process.env.JIRA_USERNAME;
+        const token = process.env.JIRA_TOKEN;
+        
         const fetchOptions = {
             headers: {
-                'Authorization': btoa(username + ':' + token),
+                'Authorization': 'Basic ' + btoa(username + ':' + token),
                 'Content-Type': 'application/json'
             },
             body: this.method === POST_METHOD ? JSON.stringify(this._postParams) : undefined 
