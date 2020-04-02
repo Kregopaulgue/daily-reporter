@@ -3,12 +3,10 @@ const { RequestMaker } = require('./RequestMaker.js');
  * Class representing Project api
  */
 class ProjectApi {
-    endpointUrl = '/rest/api/3/project/'
-
-    static getAllProjects() {
+    static async  getAllProjects() {
         //building url for paginating projects
-        const requestUrl = endpointUrl += 'search';
-        const requestMakerObject = new RequestMaker(requestUrl, 'GET');
+        const requestUrl = 'https://czechpol.atlassian.net/rest/api/3/project/search';
+        const requestMakerObject = new RequestMaker({ endpointUrl: requestUrl, method: 'GET'});
 
         try {
             const projects = await requestMakerObject.makeRequest();
